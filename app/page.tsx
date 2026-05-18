@@ -334,7 +334,7 @@ function Modal({
               borderRadius: 12,
               border: "none",
               background:
-                "linear-gradient(135deg,#354bec,#354bec)",
+                "linear-gradient(#354bec,#354bec,#354bec)",
               color: "#fff",
               cursor: "pointer",
               fontWeight: 700,
