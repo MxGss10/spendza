@@ -76,14 +76,7 @@ const MONTHLY = [
   { m: "Mai", d: 0, r: 0 },
 ];
 
-const [goals, setGoals] = useState([
-  {
-    id: "1",
-    name: "Voyage Japon",
-    target: 3000,
-    saved: 1200,
-  },
-]);
+const GOALS: Goal[] = [];
 
 /* =========================
    HELPERS
@@ -1014,47 +1007,6 @@ export default function App() {
 
           {page === "Projets" && (
             <>
-            <>
-  <div
-    style={{
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      marginBottom: 24,
-    }}
-  >
-    <h1>Projets</h1>
-
-    <button
-      onClick={() => {
-        const name = prompt("Nom du projet")
-        const target = prompt("Objectif (€)")
-
-        if (!name || !target) return
-
-        setGoals([
-          ...goals,
-          {
-            id: Date.now().toString(),
-            name,
-            target: Number(target),
-            saved: 0,
-          },
-        ])
-      }}
-      style={{
-        padding: "12px 18px",
-        borderRadius: 14,
-        border: "none",
-        cursor: "pointer",
-        background: "#354bec",
-        color: "#fff",
-        fontWeight: 700,
-      }}
-    >
-      + Ajouter un projet
-    </button>
-  </div>
               <h1
                 style={{
                   fontSize: 34,
@@ -1072,7 +1024,7 @@ export default function App() {
                   gap: 18,
                 }}
               >
-                {goals.map((g) => {
+                {GOALS.map((g) => {
                   const p = pct(
                     g.current,
                     g.target
