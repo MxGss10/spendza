@@ -50,7 +50,15 @@ const GOALS = [
 const fmt = (n:number) => new Intl.NumberFormat("fr-FR", {style: "currency", currency: "EUR"}).format(n);
 const pct = (v:number, t:number) =>t===0?0:Math.min(100,Math.round(v/t*100));
 
-function PBar({value,color,h=6}){
+function PBar({
+  value,
+  color,
+  h = 6,
+}: {
+  value:number;
+  color:string;
+  h?:number;
+}) {
   const [w,setW]=useState(0);
   useEffect(()=>{const t=setTimeout(()=>setW(value),350);return()=>clearTimeout(t);},[value]);
   return <div style={{height:h,background:"rgba(255,255,255,0.07)",borderRadius:99,overflow:"hidden"}}>
