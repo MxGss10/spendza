@@ -285,7 +285,7 @@ function Modal({
             }
             style={inputStyle}
           >
-            <option value="">Sans catégorie</option>
+            <option value="income">Revenus</option>
 
             {CATS.map((c) => (
               <option key={c.id} value={c.id}>
