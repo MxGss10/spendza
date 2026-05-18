@@ -60,6 +60,8 @@ const CATS: Category[] = [
   { id: "4", name: "Loisirs", icon: "🎮", color: "#8c48ec" },
   { id: "5", name: "Santé", icon: "💊", color: "#10b981" },
   { id: "6", name: "Restaurants", icon: "🍕", color: "#f91616" },
+  { id: "7", name: "Salaire", icon: "💰", color: "#10b981" },
+{ id: "8", name: "Abonnements", icon: "📺", color: "#ecec35" },
 ];
 
 const INIT_EXP: Expense[] = [];
