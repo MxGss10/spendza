@@ -446,7 +446,7 @@ function Modal({
 ========================= */
 
 export default function App() {
-  const [page, setPage] = useState("Acceuil");
+  const [page, setPage] = useState("Accueil");
   const [modal, setModal] = useState(false);
 
   const [expenses, setExpenses] =
@@ -547,7 +547,7 @@ export default function App() {
             }}
           >
             {[
-              "Acceuil",
+              "Accueil",
               "Dépenses",
               "Catégories",
               "Projets",
@@ -604,7 +604,7 @@ export default function App() {
                       marginBottom: 8,
                     }}
                   >
-                    Acceuil
+                    Accueil
                   </h1>
 
                   <div style={{ color: "#94a3b8" }}>
