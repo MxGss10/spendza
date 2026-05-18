@@ -54,12 +54,12 @@ type Goal = {
 ========================= */
 
 const CATS: Category[] = [
-  { id: "1", name: "Alimentation", icon: "🛒", color: "#f59e0b" },
-  { id: "2", name: "Transport", icon: "🚗", color: "#3b82f6" },
-  { id: "3", name: "Logement", icon: "🏠", color: "#8b5cf6" },
-  { id: "4", name: "Loisirs", icon: "🎮", color: "#ec4899" },
+  { id: "1", name: "Alimentation", icon: "🛒", color: "#88f50b" },
+  { id: "2", name: "Transport", icon: "🚗", color: "#f67d3b" },
+  { id: "3", name: "Logement", icon: "🏠", color: "#354bec" },
+  { id: "4", name: "Loisirs", icon: "🎮", color: "#8c48ec" },
   { id: "5", name: "Santé", icon: "💊", color: "#10b981" },
-  { id: "6", name: "Restaurants", icon: "🍕", color: "#f97316" },
+  { id: "6", name: "Restaurants", icon: "🍕", color: "#f91616" },
 ];
 
 const INIT_EXP: Expense[] = [
@@ -154,7 +154,7 @@ const GOALS: Goal[] = [
     target: 2500,
     current: 1850,
     icon: "💻",
-    color: "#8b5cf6",
+    color: "#354bec",
     date: "Sep 2026",
   },
   {
@@ -534,7 +534,7 @@ export default function App() {
             }}
           >
             Spend
-            <span style={{ color: "#4c60f6" }}>
+            <span style={{ color: "#354bec" }}>
               za
             </span>
           </div>
@@ -567,7 +567,7 @@ export default function App() {
                       : "transparent",
                   color:
                     page === item
-                      ? "#c4b5fd"
+                      ? "#354bec"
                       : "#94a3b8",
                 }}
               >
@@ -654,7 +654,7 @@ export default function App() {
                   {
                     label: "Solde",
                     value: income - spent,
-                    color: "#8b5cf6",
+                    color: "#354bec",
                   },
                 ].map((card) => (
                   <div
@@ -733,12 +733,12 @@ export default function App() {
                         >
                           <stop
                             offset="5%"
-                            stopColor="#8b5cf6"
+                            stopColor="#354bec"
                             stopOpacity={0.4}
                           />
                           <stop
                             offset="95%"
-                            stopColor="#8b5cf6"
+                            stopColor="#354bec"
                             stopOpacity={0}
                           />
                         </linearGradient>
@@ -792,7 +792,7 @@ export default function App() {
                       <Area
                         type="monotone"
                         dataKey="d"
-                        stroke="#8b5cf6"
+                        stroke="#354bec"
                         fill="url(#grad)"
                         strokeWidth={3}
                       />
