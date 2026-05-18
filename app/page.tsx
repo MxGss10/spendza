@@ -47,8 +47,8 @@ const GOALS = [
   {id:"g3",name:"Fonds urgence", target:10000,current:6200,icon:"🛡️",color:"#10b981",date:null},
 ];
 
-const fmt=n=>new Intl.NumberFormat("fr-FR",{style:"currency",currency:"EUR"}).format(n);
-const pct=(v,t)=>t===0?0:Math.min(100,Math.round(v/t*100));
+const fmt = (n:number) => new Intl.NumberFormat("fr-FR", {style: "currency", currency: "EUR"}).format(n);
+const pct = (v:number, t:number) =>t===0?0:Math.min(100,Math.round(v/t*100));
 
 function PBar({value,color,h=6}){
   const [w,setW]=useState(0);
