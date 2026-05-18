@@ -446,7 +446,7 @@ function Modal({
 ========================= */
 
 export default function App() {
-  const [page, setPage] = useState("dashboard");
+  const [page, setPage] = useState("Acceuil");
   const [modal, setModal] = useState(false);
 
   const [expenses, setExpenses] =
@@ -549,7 +549,7 @@ export default function App() {
             {[
               "Acceuil",
               "Dépenses",
-              "Categories",
+              "Catégories",
               "Projets",
             ].map((item) => (
               <button
@@ -585,9 +585,9 @@ export default function App() {
             padding: 36,
           }}
         >
-          {/* DASHBOARD */}
+          {/* ACCUEIL */}
 
-          {page === "dashboard" && (
+          {page === "Accueil" && (
             <>
               <div
                 style={{
@@ -604,7 +604,7 @@ export default function App() {
                       marginBottom: 8,
                     }}
                   >
-                    Dashboard
+                    Acceuil
                   </h1>
 
                   <div style={{ color: "#94a3b8" }}>
@@ -863,7 +863,7 @@ export default function App() {
             </>
           )}
 
-          {/* EXPENSES */}
+          {/* DÉPENSES */}
 
           {page === "Dépenses" && (
             <>
@@ -1005,9 +1005,9 @@ export default function App() {
             </>
           )}
 
-          {/* CATEGORIES */}
+          {/* CATÉGORIES */}
 
-          {page === "categories" && (
+          {page === "Catégories" && (
             <>
               <h1
                 style={{
@@ -1077,9 +1077,9 @@ export default function App() {
             </>
           )}
 
-          {/* SAVINGS */}
+          {/* PROJETS */}
 
-          {page === "savings" && (
+          {page === "Projets" && (
             <>
               <h1
                 style={{
