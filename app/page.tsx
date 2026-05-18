@@ -771,7 +771,7 @@ export default function App() {
 
                       <Tooltip
   content={({ active, payload }) => {
-    if (!active || !payload || !payload.length) return null
+    if (!active || !payload || !payload.length) return null;
 
     return (
       <div
@@ -785,7 +785,7 @@ export default function App() {
       >
         {payload[0].name}: {payload[0].value}€
       </div>
-    )
+    );
   }}
 />
 
@@ -839,7 +839,7 @@ export default function App() {
 
                       <Tooltip
                         content={({ active, payload }) => {
-                          if (!active || !payload || !payload.length) return null
+                          if (!active || !payload || !payload.length) return null;
 
                           return (
                             <div
@@ -853,7 +853,7 @@ export default function App() {
                             >
                               {payload[0].name}: {payload[0].value}€
                             </div>
-                          )
+                          );
                         }}
                       />
                     </PieChart>
