@@ -62,72 +62,7 @@ const CATS: Category[] = [
   { id: "6", name: "Restaurants", icon: "🍕", color: "#f91616" },
 ];
 
-const INIT_EXP: Expense[] = [
-  {
-    id: "e1",
-    description: "Courses Lidl",
-    amount: 87.5,
-    category_id: "1",
-    date: "2026-05-15",
-    type: "expense",
-  },
-  {
-    id: "e2",
-    description: "Abonnement RATP",
-    amount: 86.4,
-    category_id: "2",
-    date: "2026-05-14",
-    type: "expense",
-  },
-  {
-    id: "e3",
-    description: "Loyer mai",
-    amount: 980,
-    category_id: "3",
-    date: "2026-05-01",
-    type: "expense",
-  },
-  {
-    id: "e4",
-    description: "Netflix",
-    amount: 17.99,
-    category_id: "4",
-    date: "2026-05-10",
-    type: "expense",
-  },
-  {
-    id: "e5",
-    description: "Pharmacie",
-    amount: 24.3,
-    category_id: "5",
-    date: "2026-05-12",
-    type: "expense",
-  },
-  {
-    id: "e6",
-    description: "Sushi Samba",
-    amount: 62,
-    category_id: "6",
-    date: "2026-05-11",
-    type: "expense",
-  },
-  {
-    id: "e7",
-    description: "Salaire mai",
-    amount: 3200,
-    category_id: null,
-    date: "2026-05-05",
-    type: "income",
-  },
-  {
-    id: "e8",
-    description: "Marché bio",
-    amount: 43.2,
-    category_id: "1",
-    date: "2026-05-04",
-    type: "expense",
-  },
-];
+const INIT_EXP: Expense[] = [];
 
 const MONTHLY = [
   { m: "Déc", d: 1820, r: 3100 },
@@ -138,35 +73,7 @@ const MONTHLY = [
   { m: "Mai", d: 1387, r: 3200 },
 ];
 
-const GOALS: Goal[] = [
-  {
-    id: "g1",
-    name: "Voyage Japon",
-    target: 5000,
-    current: 2340,
-    icon: "✈️",
-    color: "#3b82f6",
-    date: "Mars 2027",
-  },
-  {
-    id: "g2",
-    name: "MacBook Pro",
-    target: 2500,
-    current: 1850,
-    icon: "💻",
-    color: "#354bec",
-    date: "Sep 2026",
-  },
-  {
-    id: "g3",
-    name: "Fonds urgence",
-    target: 10000,
-    current: 6200,
-    icon: "🛡️",
-    color: "#10b981",
-    date: null,
-  },
-];
+const GOALS: Goal[] = [];
 
 /* =========================
    HELPERS
