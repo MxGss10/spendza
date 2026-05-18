@@ -59,23 +59,31 @@ const CATS: Category[] = [
   { id: "3", name: "Logement", icon: "🏠", color: "#354bec" },
   { id: "4", name: "Loisirs", icon: "🎮", color: "#8c48ec" },
   { id: "5", name: "Santé", icon: "💊", color: "#10b981" },
-  { id: "6", name: "Restaurants", icon: "🍕", color: "#f91616" },
+  { id: "6", name: "Restaurants", icon: "🍕", color: "#f96916" },
   { id: "7", name: "Salaire", icon: "💰", color: "#10b981" },
 { id: "8", name: "Abonnements", icon: "📺", color: "#ecec35" },
+{ id: "9", name: "Assurance", icon: "🛡️", color: "#ef4444" },
 ];
 
 const INIT_EXP: Expense[] = [];
 
 const MONTHLY = [
-  { m: "Déc", d: 1820, r: 3100 },
-  { m: "Jan", d: 2140, r: 3200 },
-  { m: "Fév", d: 1650, r: 3200 },
-  { m: "Mar", d: 2380, r: 3400 },
-  { m: "Avr", d: 1990, r: 3200 },
-  { m: "Mai", d: 1387, r: 3200 },
+  { m: "Déc", d: 0, r: 0 },
+  { m: "Jan", d: 0, r: 0 },
+  { m: "Fév", d: 0, r: 0 },
+  { m: "Mar", d: 0, r: 0 },
+  { m: "Avr", d: 0, r: 0 },
+  { m: "Mai", d: 0, r: 0 },
 ];
 
-const GOALS: Goal[] = [];
+const [goals, setGoals] = useState([
+  {
+    id: "1",
+    name: "Voyage Japon",
+    target: 3000,
+    saved: 1200,
+  },
+]);
 
 /* =========================
    HELPERS
@@ -1006,6 +1014,47 @@ export default function App() {
 
           {page === "Projets" && (
             <>
+            <>
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      marginBottom: 24,
+    }}
+  >
+    <h1>Projets</h1>
+
+    <button
+      onClick={() => {
+        const name = prompt("Nom du projet")
+        const target = prompt("Objectif (€)")
+
+        if (!name || !target) return
+
+        setGoals([
+          ...goals,
+          {
+            id: Date.now().toString(),
+            name,
+            target: Number(target),
+            saved: 0,
+          },
+        ])
+      }}
+      style={{
+        padding: "12px 18px",
+        borderRadius: 14,
+        border: "none",
+        cursor: "pointer",
+        background: "#354bec",
+        color: "#fff",
+        fontWeight: 700,
+      }}
+    >
+      + Ajouter un projet
+    </button>
+  </div>
               <h1
                 style={{
                   fontSize: 34,
@@ -1023,7 +1072,7 @@ export default function App() {
                   gap: 18,
                 }}
               >
-                {GOALS.map((g) => {
+                {goals.map((g) => {
                   const p = pct(
                     g.current,
                     g.target
