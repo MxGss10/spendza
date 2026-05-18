@@ -275,17 +275,33 @@ function Modal({
         </div>
 
         <div style={{ marginBottom: 12 }}>
-          <select
-            value={form.category_id}
-            onChange={(e) =>
-              setForm({
-                ...form,
-                category_id: e.target.value,
-              })
-            }
-            style={inputStyle}
-          >
-            <option value="income">Revenus</option>
+  <select
+    value={form.type}
+    onChange={(e) =>
+      setForm({
+        ...form,
+        type: e.target.value as TransactionType,
+      })
+    }
+    style={inputStyle}
+  >
+    <option value="expense">Dépense</option>
+    <option value="income">Revenu</option>
+  </select>
+</div>
+
+<div style={{ marginBottom: 12 }}>
+  <select
+    value={form.category_id}
+    onChange={(e) =>
+      setForm({
+        ...form,
+        category_id: e.target.value,
+      })
+    }
+    style={inputStyle}
+  >
+    <option value="">Aucune catégorie</option>
 
             {CATS.map((c) => (
               <option key={c.id} value={c.id}>
