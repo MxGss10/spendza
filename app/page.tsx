@@ -154,7 +154,7 @@ onAdd,
   </div>;
 }
 
-function Dashboard({exps,onAdd}){
+function Dashboard({exps,onAdd}:{exps:any[];onAdd:()=>void}){
   const spent=exps.filter(e=>e.type==="expense").reduce((s,e)=>s+e.amount,0);
   const income=exps.filter(e=>e.type==="income").reduce((s,e)=>s+e.amount,0);
   const B=3200, up=pct(spent,B);
@@ -244,7 +244,15 @@ function Dashboard({exps,onAdd}){
   </div>;
 }
 
-function Expenses({exps,onAdd,onDel}){
+function Expenses({
+  exps,
+  onAdd,
+  onDel
+}:{
+  exps:any[];
+  onAdd:(e:any)=>void;
+  onDel:(id:string)=>void;
+}){
   const [s,setS]=useState("");const [tf,setTf]=useState("");const [cf,setCf]=useState("");
   const f=exps.filter(e=>{if(s&&!e.description.toLowerCase().includes(s.toLowerCase()))return false;if(tf&&e.type!==tf)return false;if(cf&&e.category_id!==cf)return false;return true;});
   const inp={padding:"9px 12px",borderRadius:10,border:"1px solid #252535",background:"rgba(255,255,255,0.04)",color:"#fff",fontSize:13,outline:"none",fontFamily:"'DM Sans',sans-serif"};
@@ -276,8 +284,8 @@ function Expenses({exps,onAdd,onDel}){
   </div>;
 }
 
-function Categories({exps}){
-  const [hov,setHov]=useState(null);
+function Categories({exps}:{exps:any[]}){
+  const [hov,setHov]=useState<any>(null);
   const spent=exps.filter(e=>e.type==="expense");
   return <div style={{display:"flex",flexDirection:"column",gap:20}}>
     <div><h1 style={{fontFamily:"'Syne',sans-serif",fontWeight:800,fontSize:27,color:"#fff",margin:0}}>Catégories</h1><p style={{color:"#6b7280",fontSize:13,margin:"4px 0 0"}}>{CATS.length} catégories actives</p></div>
@@ -402,7 +410,7 @@ export default function App(){
       <main style={{flex:1,padding:"32px 36px",overflowY:"auto",maxHeight:"100vh",minWidth:0}}>
         <div style={{maxWidth:940,margin:"0 auto"}}>
           {page==="dashboard"&&<Dashboard exps={exps} onAdd={()=>setModal(true)}/>}
-          {page==="expenses"&&<Expenses exps={exps} onAdd={()=>setModal(true)} onDel={id=>setExps(p=>p.filter(e=>e.id!==id))}/>}
+          {page==="expenses"&&<Expenses exps={exps} onAdd={()=>setModal(true)} onDel={(id:number)=>setExps(p=>p.filter(e=>e.id!==id))}/>}
           {page==="categories"&&<Categories exps={exps}/>}
           {page==="savings"&&<Savings/>}
           {page==="settings"&&<Settings/>}
