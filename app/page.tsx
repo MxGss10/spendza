@@ -65,7 +65,21 @@ function PBar({
     <div style={{height:"100%",width:`${w}%`,background:color,borderRadius:99,transition:"width 1.1s cubic-bezier(.16,1,.3,1)",boxShadow:`0 0 8px ${color}55`}}/>
   </div>;
 }
-function KCard({label,value,icon,color,sub,i=0}){
+function KCard({
+  label,
+  value,
+  icon,
+  color,
+  sub,
+  i = 0,
+}: {
+  label:string;
+  value:string;
+  icon:string;
+  color:string;
+  sub?:string;
+  i?:number;
+}) {
   const [v,setV]=useState(false);
   useEffect(()=>{const t=setTimeout(()=>setV(true),i*90);return()=>clearTimeout(t);},[i]);
   return <div style={{padding:"18px 20px",borderRadius:16,border:`1px solid ${color}28`,background:`${color}0c`,opacity:v?1:0,transform:v?"translateY(0)":"translateY(14px)",transition:"opacity .5s,transform .5s cubic-bezier(.16,1,.3,1)"}}>
@@ -75,7 +89,15 @@ function KCard({label,value,icon,color,sub,i=0}){
     {sub&&<div style={{fontSize:11,color:"#6b7280",marginTop:4}}>{sub}</div>}
   </div>;
 }
-function CT({active,payload,label}){
+function CT({
+active,
+payload,
+label,
+}: {
+active?: boolean;
+payload?: any[];
+label?: string;
+}) {
   if(!active||!payload?.length) return null;
   return <div style={{background:"#12121e",border:"1px solid #252535",borderRadius:12,padding:"10px 14px",fontSize:12,fontFamily:"'DM Sans',sans-serif"}}>
     <div style={{fontFamily:"'Syne',sans-serif",fontWeight:700,color:"#fff",marginBottom:6}}>{label}</div>
@@ -87,7 +109,15 @@ function CT({active,payload,label}){
   </div>;
 }
 
-function Modal({onClose,cats,onAdd}){
+function Modal({
+  onClose,
+cats,
+onAdd,
+}: {
+  onClose: () => void;
+  cats: any[];
+  onAdd: (e:any) => void;
+}){
   const [form,setForm]=useState({amount:"",description:"",category_id:"",date:new Date().toISOString().slice(0,10),type:"expense"});
   const inp={width:"100%",padding:"10px 14px",borderRadius:10,border:"1px solid #2a2a40",background:"rgba(255,255,255,0.05)",color:"#fff",fontSize:14,outline:"none",boxSizing:"border-box",fontFamily:"'DM Sans',sans-serif"};
   function submit(e){e.preventDefault();if(!form.amount||!form.description)return;onAdd({...form,id:"e"+Date.now(),amount:parseFloat(form.amount)});onClose();}
